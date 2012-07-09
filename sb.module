@@ -1,0 +1,24 @@
+<?php
+
+
+function sb_init() {
+
+}
+
+/**
+ * Implementation of hook_cron().
+ */
+function sb_cron() {
+  $libraries = libraries_get_libraries();
+  
+  if (in_array('PHPMailer-BMH', $libraries)) {
+    $path = libraries_get_path('PHPMailer-BMH');
+    
+    // constat used by the PHPMailer-BMH lib
+    define('_PATH_BMH', $path . '/');
+    
+    require_once _PATH_BMH . 'class.phpmailer-bmh.php';
+    
+    $bhm = new BounceMailHandler();
+  }
+}
