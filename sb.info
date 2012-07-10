@@ -1,2 +1,7 @@
 name = Simplenews Bounce
 description = Handles email bounce messages for simplenews newsletters
+core = 7.x
+package = "Mail"
+
+dependencies[] = simplenews
+dependencies[] = libraries
