@@ -1,2 +1,13 @@
 <?php
 
+function sb_ui_menu() {
+  $items['admin/config/sb'] = array(
+    'page callback' => 'sb_ui_form',
+  );
+  
+  return $items;
+}
+
+function sb_ui_form() {
+  
+}
